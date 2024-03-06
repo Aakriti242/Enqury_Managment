@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-size: 100%;
+
+     }
+     body img{
+        width: 100%;
+    }
+    .form h1 {
+        padding-top: 4%;
+        margin-left: 1%;
+    }
+
+    .form {
+        width: 45%;
+        height: 70vh;
+        /* background-color: aqua; */
+        border: 1px solid black;
+        box-shadow: 10px 10px 10px 10px black;
+        margin: auto;
+        text-align: center;
+        margin-top: 8%;
+    }
+
+    input {
+        margin-top: 2%;
+        height: 4%;
+    }
+</style>
+
+<body style="background-image: url('{% static 'images/fifth.jpg' %}');">
+
+
+    <form action="{% url 'insertquery' %}" method="post" class="form">
+        {% csrf_token %}
+        <h1> Query-Form</h1>
+        <h1 id="msg" style="color: red;">{{msg}}</h1>
+        <input type="text" name="name" placeholder="Name" required><br><br>
+        <input type="email" name="email" placeholder="email_id" required value="{{email}}" ><br><br>
+        <input type="number" name="contact" placeholder="Contact No" required><br><br>
+        <input type="text" name="query" placeholder="Enter Query" required><br><br>
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+
+</html>

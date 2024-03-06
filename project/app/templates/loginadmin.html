@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box {
+        width: 30%;
+        height: 50vh;
+        background-color: rgba(216, 112, 147, 0.334);
+        margin-top: 10%;
+        margin-left: 30%;
+    }
+
+    body {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-size: 100%;
+
+    }
+
+    body img {
+        width: 100%;
+    }
+
+    #box h1 {
+        margin-left: 25%;
+        padding-top: 5%;
+        text-shadow: 5px 5px 5px white;
+    }
+
+    input {
+        margin-left: 27%;
+        height: 4vh;
+    }
+</style>
+
+<body style="background-image: url('{% static 'images/third.jpg' %}');">
+
+
+    <div id="box">
+        <h1>Admin Login page</h1>
+        <h2 style="color: red;">{{msg}}</h2>
+        <form action="{% url 'loginadmin' %}" method="post" class="form">
+            {% csrf_token %}
+
+
+            <input type="email" name="email" placeholder="email_id" required><br><br>
+            <input type="password" name="password" placeholder="password" required><br><br>
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
+
+</html>

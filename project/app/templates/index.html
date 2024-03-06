@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+     body{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-size: 100%;
+
+     }
+     body img{
+        width: 100%;
+    }
+    .main{
+        width: 70%;
+        height: 70vh;
+        /* background-color: blueviolet; */
+       margin: auto;
+       margin-top: 7%;
+    }
+    .one{
+        width: 20%;
+        height: 50vh;
+        /* background-color: cadetblue; */
+        /* border: 1px solid black; */
+        box-shadow: 10px 10px 10px 10px white;
+        float: left;
+        margin-top: 12%;
+        margin-left: 25%;
+    }
+    .one h1{
+        margin-left: 20%;
+    }
+    .btn{
+        width: 70%;
+        height: 25%;
+        margin-left: 15%;
+        font-size: 120%;
+        border: none;
+        
+    }
+    .two{
+        width: 20%;
+        height: 50vh;
+        /* background-color:chocolate; */
+        /* border: 1px solid black; */
+        box-shadow: 10px 10px 10px 10px white;
+
+        float: left;
+        margin-top: 12%;
+        margin-left: 5%;
+    }
+    .two h1{
+        margin-left: 15%;
+    }    
+    
+</style>
+<body  style="background-image: url('{% static 'images/first.jpg' %}');" >
+    <div class="main">
+        <div class="one">
+            <h1>---User---</h1><br><br>
+            <a href="{% url 'reguser' %}"><button class="btn">Registration</button></a><br><br>
+            <a href="{% url 'loginuser' %}"><button class="btn">Login</button></a><br><br>
+
+        </div>
+        <div class="two">
+            <h1>---Admin---</h1><br><br>
+           <a href="{% url 'regadmin' %}"><button class="btn">Registration</button></a><br><br>
+           <a href="{% url 'loginadmin' %}"><button class="btn">login</button></a><br><br>
+        </div>
+    </div>
+   
+   
+</body>
+</html>
